@@ -55,8 +55,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/:id', (req, res) => {
     try {
-        const { id } = req.params
-        // .populate('celebrity')
+        const { id } = req.params   
         Movie
             .findByIdAndRemove(id)
             .then(movie => res.render('movies/movie-details', movie))
