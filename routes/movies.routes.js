@@ -51,6 +51,24 @@ router.get('/:id', (req, res) => {
     }
 })
 
+// Iteration 9 Delete
+
+router.post('/:id', (req, res) => {
+    try {
+        const { id } = req.params
+        // .populate('celebrity')
+        Movie
+            .findByIdAndRemove(id)
+            .then(movie => res.render('movies/movie-details', movie))
+            .catch(err => {
+                console.log(err);
+            });
+
+    }
+    catch (error) {
+        console.log(error)
+    }
+})
 
 
 module.exports = router
