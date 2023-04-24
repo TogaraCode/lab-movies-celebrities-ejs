@@ -50,4 +50,7 @@ router.get('/:id', (req, res) => {
         console.log(error)
     }
 })
+
+
+
 module.exports = router
